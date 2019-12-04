@@ -1,0 +1,31 @@
+:global .am-radio {
+  width: 0.22rem;
+  height: 0.22rem;
+  border: 0.01rem solid #a4a7a9;
+  border-radius: 50%;
+  margin-right: 0.1rem;
+}
+:global .am-radio.am-radio-checked {
+  border: 0.01rem solid #008cee;
+}
+:global .am-radio-inner:after {
+  height: 0.08rem;
+  width: 0.08rem;
+  border-radius: 50%;
+  border: 0.01rem solid #008cee;
+  background-color: #008cee;
+  top: 0.05rem;
+  left: 0.125rem;
+}
+
+:global .am-popover-content {
+  .am-popover-inner {
+    // background: none;
+    border-radius: 10px !important;
+  }
+}
+
+:global .am-popover-hidden {
+  display: block !important;
+  z-index: 10 !important;
+}

@@ -1,0 +1,60 @@
+.div_float {
+  width: 90%;
+  margin: 45px auto 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  height: 0.8rem;
+  .div_right_font {
+    width: 3.2rem;
+    font-size: 0.8rem;
+  }
+  .div_Radio {
+    display: flex;
+    flex: 1;
+    label {
+      display: block;
+    }
+    label:nth-child(#{1}) {
+      margin-bottom: 6px;
+    }
+
+    span {
+      color: red;
+      margin-top: 0.1rem;
+      font-size: 0.53rem;
+      letter-spacing: -1px;
+    }
+    :global .am-list-item {
+      // width:7rem;
+      background: none;
+    }
+    :global .am-list-item .am-list-line {
+      border: 0;
+    }
+    :global .am-list-item .am-list-line .am-list-content {
+      display: none;
+    }
+    :global .am-list-item .am-list-line .am-list-extra {
+      padding-top: 0;
+      overflow: visible;
+    }
+    :global .am-list-item .am-list-line {
+      padding-right: 0;
+    }
+  }
+  .PopoverClassName {
+    margin-top: 0.1rem;
+    width: 30%;
+    height: 1.3rem;
+    overflow: hidden;
+    text-align: right;
+    // border:1px solid black;
+    input {
+      width: 84%;
+      height: 0.8rem;
+      border-radius: 6px;
+    }
+  }
+}

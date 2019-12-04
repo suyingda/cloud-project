@@ -1,0 +1,46 @@
+.Tab_Class {
+  // width: 80%;
+  margin: 0 auto;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+
+  .loading_ {
+    width: 100%;
+    // height: document.documentElement.clientHeight * 0.6,
+    display: flex;
+    justify-content: center;
+
+    display: flex;
+    position: absolute;
+    /* top: 50%; */
+    z-index: 66666;
+    opacity: 0.6;
+    justify-content: center;
+    height: 100%;
+    background: #ccc;
+  }
+
+  :global .am-tabs-tab-bar-wrap {
+    height: 2rem;
+  }
+  :global .am-tabs-tab-bar-wrap {
+    .am-tabs-default-bar-content {
+      .am-tabs-default-bar-tab {
+        height: 2rem;
+      }
+      // div {
+      //   height: 2rem !important;
+      // }
+    }
+  }
+  :global .am-tabs-tab-bar-wrap {
+    .am-tabs-default-bar-content {
+      div {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}

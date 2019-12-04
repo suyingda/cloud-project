@@ -1,0 +1,78 @@
+[
+    {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "id": 183,
+                        "idNumber": "510501197504201000",
+                        "name": "明永笑",
+                        "parentId": "513425197904241000",
+                        "relationship": "爷爷"
+                    },
+                    {
+                        "children": [],
+                        "id": 184,
+                        "idNumber": "51052219921231149X",
+                        "name": "奚忍地",
+                        "parentId": "513425197904241000",
+                        "relationship": "奶奶"
+                    }
+                ],
+                "id": 181,
+                "idNumber": "513425197904241000",
+                "name": "滕山始",
+                "parentId": "511124195109291000",
+                "relationship": "父"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "id": 185,
+                        "idNumber": "511600196607231000",
+                        "name": "云纳通",
+                        "parentId": "512022195706091000",
+                        "relationship": "公公"
+                    },
+                    {
+                        "children": [],
+                        "id": 186,
+                        "idNumber": "51130419930428107X",
+                        "name": "庞故盖",
+                        "parentId": "512022195706091000",
+                        "relationship": "婆婆"
+                    }
+                ],
+                "id": 182,
+                "idNumber": "512022195706091000",
+                "name": "伍护司",
+                "parentId": "511124195109291000",
+                "relationship": "母"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "id": 188,
+                        "idNumber": "513427196007051000",
+                        "name": "凤育被",
+                        "parentId": "510901195209221000",
+                        "relationship": "孙"
+                    }
+                ],
+                "id": 187,
+                "idNumber": "510901195209221000",
+                "name": "堪看司",
+                "parentId": "511124195109291000",
+                "relationship": "子女"
+            }
+        ],
+        "id": 189,
+        "idNumber": "511124195109291000",
+        "name": "史刚价",
+        "parentId": "0",
+        "relationship": "本人"
+    }
+]

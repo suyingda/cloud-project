@@ -1,0 +1,62 @@
+$width_: 90%;
+$margin_: 0 auto;
+$display_: flex;
+$flex-direction_: row;
+$flex-wrap_: wrap;
+$justify-content_: space-between;
+$align-content_: space-around;
+$padding-bottom_: 10px;
+
+// a
+$a_display: block;
+$a_width: 31%;
+$a_height: 1.3rem;
+$a_line-height: 1.3rem;
+$a_margin-bottom: 10px;
+$a_font-size: 0.5rem;
+
+h3 {
+  margin: 15px 10px 10px 10px;
+  font-size: 0.6rem;
+  line-height: 2rem;
+  color: rgb(136, 136, 136);
+  padding: 0 15px;
+  border-bottom: 1px solid rgb(246, 246, 246);
+}
+.PersonnelDetails {
+  width: $width_;
+  margin: $margin_;
+  display: $display_;
+  flex-direction: $flex-direction_;
+  flex-wrap: $flex-wrap_;
+  justify-content: $justify-content_;
+  align-content: $padding-bottom_;
+  padding-bottom: $padding-bottom_;
+  a {
+    display: $a_display;
+    width: $a_width;
+    height: $a_height;
+    line-height: $a_line-height;
+    margin-bottom: $a_margin-bottom;
+    font-size: $a_font-size;
+  }
+}
+
+.Education {
+  width: $width_;
+  margin: $margin_;
+  display: $display_;
+  flex-direction: $flex-direction_;
+  flex-wrap: $flex-wrap_;
+  justify-content: $justify-content_;
+  align-content: $padding-bottom_;
+  padding-bottom: $padding-bottom_;
+  a {
+    display: $a_display;
+    width: 45%;
+    height: $a_height;
+    line-height: $a_line-height;
+    margin-bottom: $a_margin-bottom;
+    font-size: $a_font-size;
+  }
+}

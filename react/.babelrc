@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-class-properties",
+        [
+            "import",
+            {
+                "libraryName": "antd-mobile",
+                "libraryDirectory": "es",
+                "style": "css"
+            }
+        ], //重点！网上大多漏了句"libraryDirectory": "es",
+    ]
+}
