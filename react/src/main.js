@@ -1,43 +1,85 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'e-react-redux';
-import {BrowserRouter, Switch, Link, Route, Redirect} from 'react-router-dom';
-import {RouteWithSubRoutes, routes} from "./router/router";
-import store from './module';
-import Home from './../src/page/Home/Index'
-import VideoChat from './../src/page/VideoChat/index'
-import BigPage from './../src/page/bigPage/bigPage'
-import axios from 'axios';
-axios({
-    method: 'post',
-    url: 'http://120.76.189.28:1241/queryOnlinePosInfos'
-});
-import('./main.scss')
-const App = (val) => {
-    return function () {
-        return (
-            <Provider store={store}>
-                <BrowserRouter>
-                    <Switch>
-                        <Route path={'/home'} component={Home}></Route>
-                        <Route path={'/videoChat'} component={VideoChat}></Route>
-                        <Route path={'/'} component={VideoChat}></Route>
-                        {/*<Route path={'*'} component={VideoChat}></Route>*/}
-                        {/*<Redirect to="/videoChat"/>*/}
-                        {/*{RouteWithSubRoutes(routes)}*/}
-                        {/*{val.routes.map((route, i) => <val.RouteWithSubRoutes key={i} excat={route.excat}   {...route} />)}*/}
-                    </Switch>
-                </BrowserRouter>
-            </Provider>
-        )
+
+class Parent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.name = "name";
+        this.age = "age";
     }
 
+    static PropTypesa = {
+        one: "string"
+    };
+
+    static autoFunction(get) {
+        (() => {
+            let arrayData = Object.getOwnPropertyNames(get.__proto__)
+            // console.log(get.constructor.havePropTypes['b']=1)
+            for (let i in arrayData) {
+                if (['constructor', 'render'].includes(arrayData[i])) {
+                    continue
+                }
+                const arrayd = get[arrayData[i]].toString().match(/(?:\/\*[\s\S]*?\*\/|\/\/.*?\r?\n|[^{])+\{([\s\S]*)\}$/)[1]
+                console.log(arrayd)
+            }
+            // var getAllPropertyNames = function (get) {
+            //     var props = [];
+            //     do {
+            //         props = props.concat(Object.getOwnPropertyNames(get));
+            //     } while (get = Object.getPrototypeOf(get));
+            //     return props;
+            // }
+            // var propertys = getAllPropertyNames(window);
+            // console.log(propertys.length,'//123');          //276
+            // console.log(propertys.join("\n"),'toSting');      //toString等
+            console.log(get, '6666666666666', get.componentDidMount)
+        })()
+        return Parent.PropTypesa
+    }
+
+    f() {
+        console.log(1)
+    }
+
+    render() {
+        return <div>parent C</div>
+    }
 }
 
-const AppComponent = (CreateApp) => {
-    ReactDOM.render(
-        <CreateApp/>, document.getElementById('root')
-    );
+class Children extends Parent {
+    constructor(props) {
+        super(props);
+        Parent.autoFunction(this)
+    }
+
+    static havePropTypes = {
+        a: 1,
+    };
+    getId = React.createRef();
+
+    componentDidMountadfadsff() {
+        const variable = {}
+
+    }
+
+    copyOne() {
+        const variableTwo = 21;
+    }
+
+    render() {
+        const a = 1;
+        return <div>children C{a}</div>;
+    }
+
+
 }
-AppComponent(App({RouteWithSubRoutes, routes}));
+
+console.log((new Children));
+
+
+ReactDOM.render(
+    <Children/>,
+    document.querySelector('#root')
+);
 
