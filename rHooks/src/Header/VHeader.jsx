@@ -27,7 +27,7 @@ function Header(props) {
 
                            <Icon type="mail"/>
                            study Web
-                     
+
                     </span>
                 }
             >
@@ -42,6 +42,9 @@ function Header(props) {
             </SubMenu>
             <Menu.Item key="exam">
                 <Link to="/exam">进入考场</Link>
+            </Menu.Item>
+            <Menu.Item key="game">
+                <Link to="/game">game</Link>
             </Menu.Item>
         </Menu>
 

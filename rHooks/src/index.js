@@ -11,6 +11,7 @@ import InlineBlock from "./InlineBlock";
 import VHeader from './Header/VHeader'
 import Content from './Content'
 import Exam from './Exam/one'
+import Game from './Game/index'
 import Home from './Home'
 
 
@@ -25,6 +26,7 @@ function App() {
                     <Route exact path="/blockLevel" component={BlockLevel}/>
                     <Route exact path="/inlineBlock" component={InlineBlock}/>
                     <Route exact path="/exam" component={Exam}/>
+                    <Route exact path="/game" component={Game}/>
                     <Route exact path="/content" component={Content}/>
                     <Route component={() => <h1>404!</h1>}/>
                 </Switch>

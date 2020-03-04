@@ -11,11 +11,11 @@ export default function createStore(params) {
     const middlewareReducer = (lastState, action) => {
         /*switch (action.type) {
             case 'init':
-                return '苏英大';
+                return 'syd';
             case 'marry':
-                return '陈珍珍';
+                return 'czz';
             case 'son':
-                return '苏惜雅';
+                return 'sxy';
             default:
                 return 'family';
         }*/
