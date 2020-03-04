@@ -1,0 +1,35 @@
+@import '~antd/dist/antd.css';
+
+li {
+    /*list-style: none;*/
+}
+
+.homePage {
+    height: 100vh;
+    width: 100vw;
+
+    /*background: grey;*/
+}
+
+.homePageHeader {
+    /*height: 10vh;*/
+    width: 100vw;
+    background: aqua;
+    /*line-height: 10vh;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*text-align: center;*/
+}
+
+/*
+.homePageHeader li {
+    flex: 1;
+    transition: .3s ease-out;
+}
+
+.homePageHeader li:hover {
+    font-size: 22px;
+    cursor: pointer;
+    transform: rotate(15deg);
+}
+*/

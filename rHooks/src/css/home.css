@@ -1,0 +1,46 @@
+.homeClassName {
+    width: 810px;
+    margin: 0 0 0 25px;
+    padding: 30px 0 32px 0;
+    border: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.homeClassName h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+.homeClassName p {
+    margin: 15px 0 0 0;
+    line-height: 150%;
+}
+
+.homeClassName ul {
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-bottom: 20px;
+    line-height: 150%;
+
+}
+
+.homeClassName li {
+    margin-top: 3px;
+
+}
+
+pre {
+    width: 765px;
+    margin: 15px 0 0 0;
+    padding: 20px;
+    border: 0;
+    border: 1px dotted #785;
+    background: #f5f5f5;
+    line-height: 1.4;
+    font-family: Consolas;
+}
+h3{
+    margin: 25px 0 0 0;
+    font-size: 15px;
+}
