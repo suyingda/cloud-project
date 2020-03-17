@@ -11,8 +11,11 @@ import InlineBlock from "./InlineBlock";
 import VHeader from './Header/VHeader'
 import Content from './Content'
 import Exam from './Exam/one'
-import Game from './Game/index'
+import Game from './Game/index.jsx'
 import Home from './Home'
+
+import __Prototype__ from "./Js/Prototype";
+
 
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
                     <Route exact path="/exam" component={Exam}/>
                     <Route exact path="/game" component={Game}/>
                     <Route exact path="/content" component={Content}/>
+                    <Route exact path="/js/prototype" component={__Prototype__}/>
                     <Route component={() => <h1>404!</h1>}/>
                 </Switch>
             </BrowserRouter>,

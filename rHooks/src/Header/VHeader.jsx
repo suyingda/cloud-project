@@ -31,7 +31,7 @@ function Header(props) {
                     </span>
                 }
             >
-                <Menu.ItemGroup  >
+                <Menu.ItemGroup>
                     <Menu.Item key="setting:111">
                         <Link to="/blockLevel">块级标签</Link>
                     </Menu.Item>
@@ -45,6 +45,9 @@ function Header(props) {
             </Menu.Item>
             <Menu.Item key="game">
                 <Link to="/game">game</Link>
+            </Menu.Item>
+            <Menu.Item key="prototype">
+                <Link to="/js/prototype">js/prototype</Link>
             </Menu.Item>
         </Menu>
 

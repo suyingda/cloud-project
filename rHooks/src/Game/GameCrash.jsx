@@ -15,7 +15,7 @@ export default function GameCrash() {
         const getDomeOne = document.querySelector('.ball-1')
         const getStr = getStyle(getDomeOne, 'left');
         const patt = new RegExp(/\d+/, 'g');
-        const getPoLeft = patt.exec(getStr)
+        const getPoLeft = patt.exec(getStr);
         console.log(Number(getPoLeft), 'xxx', getPoLeft)
         const changeLeft = Number(getPoLeft);
         getDomeOne.style.left = changeLeft + 100 + 'px'
