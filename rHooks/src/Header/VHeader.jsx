@@ -49,6 +49,9 @@ function Header(props) {
             <Menu.Item key="prototype">
                 <Link to="/js/prototype">js/prototype</Link>
             </Menu.Item>
+            <Menu.Item key="typescript">
+                <Link to="/js/typescript">js/typescript</Link>
+            </Menu.Item>
         </Menu>
 
     </div>

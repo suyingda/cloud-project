@@ -15,6 +15,7 @@ import Game from './Game/index.jsx'
 import Home from './Home'
 
 import __Prototype__ from "./Js/Prototype";
+import Typescript from "./Js/Typescript.ts";
 
 
 
@@ -32,6 +33,7 @@ function App() {
                     <Route exact path="/game" component={Game}/>
                     <Route exact path="/content" component={Content}/>
                     <Route exact path="/js/prototype" component={__Prototype__}/>
+                    <Route exact path="/js/typescript" component={Typescript}/>
                     <Route component={() => <h1>404!</h1>}/>
                 </Switch>
             </BrowserRouter>,
