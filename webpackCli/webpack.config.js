@@ -1,18 +1,13 @@
 'use strict';
 const path = require('path');
+const baseData = require('./webpack.base.config.js');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: "./src/index",
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: "dev-bundle.js",
+        path: __dirname + "/dist"
     },
-    module: {
-        rules: [
-            {test: /\.js|\.jsx/, use: 'babel-loader'},
-            // {test: /\.ts/, use: 'ts-loader'}
-        ]
-    },
-    // watch: true #package.json
+    ...baseData
 };

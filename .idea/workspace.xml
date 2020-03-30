@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a0da605-3b0e-4a03-97ac-5c41dc0c8309" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/src/components/Hello.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/header.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/webpack.base.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpackCli/webpack.prod.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/dist/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpackCli/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +26,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZpUhe1cjku7PfA0tZgRDILHPN3" />
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webpackCli" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="F:\cloud-project\webpackCli\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -28,6 +62,8 @@
       <recent name="G:\cloud-project\webpackCli\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\cloud-project\webpackCli" />
+      <recent name="F:\cloud-project\webpackCli\src\components" />
       <recent name="G:\cloud-project\webpackCli" />
       <recent name="G:\cloud-project" />
     </key>
@@ -44,6 +80,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/service/index.js" working-dir="$PROJECT_DIR$/service">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -57,7 +103,8 @@
       <workItem from="1585486566612" duration="462000" />
       <workItem from="1585487152225" duration="64000" />
       <workItem from="1585487260359" duration="6828000" />
-      <workItem from="1585535651907" duration="40000" />
+      <workItem from="1585535651907" duration="13835000" />
+      <workItem from="1585559513703" duration="6099000" />
     </task>
     <servers />
   </component>
@@ -72,7 +119,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

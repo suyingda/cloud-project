@@ -1,3 +1,8 @@
+#cli volume
+react dev  830kiB
+      production 128kiB
+
+
 #notes
 
 #entry
