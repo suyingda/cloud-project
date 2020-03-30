@@ -1,12 +1,12 @@
 import * as React from "react";
 
+import './header.css'
 
-export function Header(props: object) {
-    console.log(props);
+export function Header(props: string | object) {
     const {content} = props || {};
-    return <>
+    return <div className={'classcss'}>
         {content}
-    </>
+    </div>
 }
 
 
