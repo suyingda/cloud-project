@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a0da605-3b0e-4a03-97ac-5c41dc0c8309" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/src/components/Hello.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/header.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/src/page/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/webpack.base.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackCli/webpack.prod.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpackCli/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpackCli/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +27,7 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/webpackCli" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -104,7 +88,9 @@
       <workItem from="1585487152225" duration="64000" />
       <workItem from="1585487260359" duration="6828000" />
       <workItem from="1585535651907" duration="13835000" />
-      <workItem from="1585559513703" duration="6099000" />
+      <workItem from="1585559513703" duration="6201000" />
+      <workItem from="1585617948603" duration="922000" />
+      <workItem from="1585618894700" duration="973000" />
     </task>
     <servers />
   </component>
