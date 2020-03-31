@@ -5,8 +5,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
-//    "allowSyntheticDefaultImports": true,
-    "js": "react",
+    //    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react"
   },
   "include": [
