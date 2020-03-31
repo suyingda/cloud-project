@@ -1,20 +1,22 @@
 import React from "react";
-import * as Ls from './style.css';
-// const Ls = require('./style.css');
-// import Ls from './header.css'
-console.log(Ls, '111');
-
+import Ls from './style.css';
+import Less from './style.less';
+import Logo from './../images/1.png';
+ 
 export function Header(props: object) {
-    // const {content} = props || {};
+    // const { content } = props || {};
     return <div
         className={Ls.classcss}
     >
         1
-        {/*{content}*/}
+        {/* {content} */}
         {/* <div className={'lessClassTest'}>
             less
         </div>*/}
-
+        <div className={Less.styleLess}>
+            Less
+        </div>
+        <img src={Logo} alt={Logo} />
     </div>
 }
 

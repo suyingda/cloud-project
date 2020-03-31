@@ -4,10 +4,11 @@ const baseData = require('./webpack.base.config.js');
 
 module.exports = {
     mode: 'development',
-    entry: "./src/index",
+    entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', "./src/index"],
     output: {
         filename: "dev-bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/dist",
+        publicPath:'/'
     },
     ...baseData
 };
