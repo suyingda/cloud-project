@@ -17,7 +17,7 @@ const Module_ = module as any;
 if (Module_.hot) {
     Module_.hot.accept()
     console.log('进入')
-   /* Module_.hot.accept('./page/App', function () {
+    /*Module_.hot.accept('./page/App', function () {
         console.log('更新了');
         // AppComponent(App(require("../router/router")));
     })*/
