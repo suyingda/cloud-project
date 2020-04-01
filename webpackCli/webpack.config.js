@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path');
+
 const baseData = require('./webpack.base.config.js');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     output: {
         filename: "dev-bundle.js",
         path: __dirname + "/dist",
-        publicPath:'/'
+        // publicPath:'/'
     },
     ...baseData
 };

@@ -1,7 +1,6 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack');
-console.log(path.resolve(__dirname, 'node_modules'), 'xxxxxxxx')
 module.exports = {
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
@@ -40,7 +39,8 @@ module.exports = {
                             namedExport: true,
                             camelCase: true,
                             minimize: true,
-                            localIdentName: "[local]_[hash:base64:5]"
+                            // localIdentName: "[local]_[hash:base64:5]"
+                            localIdentName: "[local]"
                         }
                     },
                     'less-loader'
@@ -55,7 +55,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[path][name].[ext]'
+                            name: '[path][name].[ext]',
+                            // outputPath:'/'
                         }
                     }
                 ],

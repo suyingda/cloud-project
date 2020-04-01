@@ -2,21 +2,26 @@ import React from "react";
 import Ls from './style.css';
 import Less from './style.less';
 import Logo from './../images/1.png';
- 
-export function Header(props: object) {
-    // const { content } = props || {};
+import ddc from './../assets/对讲机.png';
+
+console.log(Logo, '\n', ddc);
+
+export function Header(props: any) {
+    const {content} = props || {};
     return <div
         className={Ls.classcss}
     >
-        1
-        {/* {content} */}
+
+        {content}
         {/* <div className={'lessClassTest'}>
             less
         </div>*/}
         <div className={Less.styleLess}>
-            Less
+            考核
+
         </div>
-        <img src={Logo} alt={Logo} />
+        <img src={Logo} alt={Logo}/>
+        <img src={ddc} alt={ddc}/>
     </div>
 }
 
