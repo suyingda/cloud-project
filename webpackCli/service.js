@@ -13,7 +13,7 @@ const base = require('./webpack.base.config')
 const dev = require('./webpack.config')
 const ClientConfig = {...dev, ...base}
 
-app.use('/dist', express.static('dist'));//将文件设置成静态
+// app.use('/dist', express.static('dist'));//将文件设置成静态
 
 
 var complier = webpack(ClientConfig);

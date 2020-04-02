@@ -1,1 +1,1 @@
-export const styleLess: string;
+export const app: string;

@@ -2,13 +2,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {App} from './page/App'
-import {Left} from './page/Left'
+
 
 ReactDOM.render(
-   <>
-       <App/>
-       <Left/>
-   </>,
+    <App/>,
     document.getElementById("app")
 );
 
