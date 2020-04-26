@@ -27,11 +27,11 @@ function Header(props) {
 
                            <Icon type="mail"/>
                            study Web
-                     
+
                     </span>
                 }
             >
-                <Menu.ItemGroup  >
+                <Menu.ItemGroup>
                     <Menu.Item key="setting:111">
                         <Link to="/blockLevel">块级标签</Link>
                     </Menu.Item>
@@ -42,6 +42,15 @@ function Header(props) {
             </SubMenu>
             <Menu.Item key="exam">
                 <Link to="/exam">进入考场</Link>
+            </Menu.Item>
+            <Menu.Item key="game">
+                <Link to="/game">game</Link>
+            </Menu.Item>
+            <Menu.Item key="prototype">
+                <Link to="/js/prototype">js/prototype</Link>
+            </Menu.Item>
+            <Menu.Item key="typescript">
+                <Link to="/js/typescript">js/typescript</Link>
             </Menu.Item>
         </Menu>
 

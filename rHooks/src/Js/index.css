@@ -1,0 +1,26 @@
+.carsh{
+    border:1px solid #CCC;
+    width:1000px;
+    height:600px;
+    margin:10px;
+    position: relative;
+}
+.carshOne {
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    border:1px solid red;
+    position: absolute;
+    left:10px;
+    top:110px;
+}
+.carshTwo {
+    position: absolute;
+    top:150px;
+    /*top:100px;*/
+    left:400px;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    border:1px solid #dbe0ff;
+}
