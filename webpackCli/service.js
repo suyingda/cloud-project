@@ -25,6 +25,7 @@ let hotMiddleware = webpackHotMiddleware(complier, {
     // publicPath: ClientConfig.output.publicPath,
     log: false,
     // inline:true,
+    noInfo:false,
     quiet: true,
 
 });
@@ -51,7 +52,7 @@ app.get("*", (req, res, next) => {
 })
 
 
-app.listen(33001, function () {
-    console.log("successful localhost:" + 33001)
+app.listen(3000, function () {
+    console.log("successful localhost:" + 3000)
 });
 

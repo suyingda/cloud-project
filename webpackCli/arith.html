@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function aFun() {
+        console.log("Hello, World!");      //  需要执行 1 次
+        return 0;       // 需要执行 1 次
+    }
+
+    aFun();
+
+    function bFun(n) {
+        for (let i = 0; i < n; i++) {         // 需要执行 (n + 1) 次
+            console.log("Hello, World!");      // 需要执行 n 次
+        }
+        return 0;       // 需要执行 1 次
+    }
+
+    bFun(10);
+
+    function cal(n) {
+        let sum = 0; // 1 次
+        let i = 1; // 1 次
+        let j = 1; // 1 次
+        for (; i <= n; ++i) {  // n 次
+            j = 1;  // n 次
+            for (; j <= n; ++j) {  // n * n ，也即是  n平方次
+                sum = sum + i * j;  // n * n ，也即是  n平方次
+            }
+        }
+    }
+
+    cal(10)
+
+    for (let i = 0; i < 10; ++i) {
+        console.log(i)
+    }
+    // a^log(a)(N)=N
+    //a^2=N
+   //log3n = log32 * log2n
+</script>
+</body>
+</html>
