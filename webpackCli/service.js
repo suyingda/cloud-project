@@ -34,7 +34,7 @@ app.use(hotMiddleware);
 // app.use(express.static(DIST_DIR))
 app.get("*", (req, res, next) => {
     // const filename = path.resolve(__dirname, 'index.html');
-    let filename = path.join(__dirname , './index.html')
+    let filename = path.join(__dirname , './dist/index.html')
     console.log(filename)
     fs.readFile(filename, function (err, data) {
         res.end(data)
@@ -52,7 +52,7 @@ app.get("*", (req, res, next) => {
 })
 
 
-app.listen(3000, function () {
+app.listen(33001, function () {
     console.log("successful localhost:" + 3000)
 });
 

@@ -1,7 +1,7 @@
 'use strict';
-
+const webpack = require('webpack')
 const baseData = require('./webpack.base.config.js');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: ['webpack-hot-middleware/client?noInfo=true&reload=true', "./src/index"],
@@ -10,5 +10,10 @@ module.exports = {
         path: __dirname + "/dist",
         // publicPath:'/'
     },
-    ...baseData
+
+    ...baseData,
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin()
+    ]
 };
