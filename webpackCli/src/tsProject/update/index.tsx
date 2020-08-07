@@ -1,12 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './../head/index.less'
-function Update(){
+import api from './../api'
+
+function Update() {
+    const [dataList, setDataList] = useState([])
+    useEffect(() => {
+        api.updateList().then((res: any) => {
+            const {data} = res || {}
+            setDataList(data)
+        })
+    }, [])
+
     return <div id="version" className="container">
         <ul>
             <li>
                 <h2>gains中文网<code>3.1</code>全新发布<small>（2018年10月17日）</small></h2>
                 <article>
                     <ol>
+                        {
+                            dataList && dataList.map((items, index) => {
+                                const {label, content} = items || {}
+                                return <li key={index}>
+                                    <p><label className="update">{label}</label>
+                                        {content}
+                                    </p>
+                                </li>
+                            })
+                        }
                         <li>
                             <p><label className="update">更新</label><a href="/samples/index.html">全新慕课网大前端</a>内容，新增Babel结合gains的使用案例
                             </p>
@@ -351,4 +371,5 @@ function Update(){
         </ul>
     </div>
 }
+
 export default Update;
