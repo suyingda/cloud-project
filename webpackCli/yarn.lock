@@ -2001,13 +2001,6 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-dafo@^0.1.1:
-  version "0.1.1"
-  resolved "http://172.16.8.10:8081/repository/npm-all/dafo/-/dafo-0.1.1.tgz#dad59de0ceac606f73f86cbaae893412ffb1d836"
-  integrity sha1-2tWd4M6sYG9z+Gy6rok0Ev+x2DY=
-  dependencies:
-    noda "^0.1.2"
-
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "http://172.16.8.10:8081/repository/npm-all/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2060,15 +2053,6 @@ define-property@^2.0.2:
   dependencies:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
-
-deno@^0.0.6:
-  version "0.0.6"
-  resolved "http://172.16.8.10:8081/repository/npm-all/deno/-/deno-0.0.6.tgz#896d5a0f60649bb532f12c041b56b742c368f6bc"
-  integrity sha1-iW1aD2Bkm7Uy8SwEG1a3QsNo9rw=
-  dependencies:
-    dafo "^0.1.1"
-    noda "^0.5.0"
-    qir "^0.0.6"
 
 depd@~1.1.2:
   version "1.1.2"
@@ -3322,9 +3306,9 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.5:
-  version "4.17.19"
-  resolved "http://172.16.8.10:8081/repository/npm-all/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha1-5I3e2+MLMyF4PFtDAfvTU7weSks=
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 log-symbols@^2.1.0:
   version "2.2.0"
@@ -3623,16 +3607,6 @@ no-case@^3.0.3:
   dependencies:
     lower-case "^2.0.1"
     tslib "^1.10.0"
-
-noda@^0.1.2:
-  version "0.1.2"
-  resolved "http://172.16.8.10:8081/repository/npm-all/noda/-/noda-0.1.2.tgz#6c3afd6072c40aacf22dbf54150ded149995b6ca"
-  integrity sha1-bDr9YHLECqzyLb9UFQ3tFJmVtso=
-
-noda@^0.5.0:
-  version "0.5.0"
-  resolved "http://172.16.8.10:8081/repository/npm-all/noda/-/noda-0.5.0.tgz#d0a44a20e53833ebd370b6b5b494b3a1406fe369"
-  integrity sha1-0KRKIOU4M+vTcLa1tJSzoUBv42k=
 
 node-libs-browser@^2.2.1:
   version "2.2.1"
@@ -4069,13 +4043,6 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "http://172.16.8.10:8081/repository/npm-all/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
-
-qir@^0.0.6:
-  version "0.0.6"
-  resolved "http://172.16.8.10:8081/repository/npm-all/qir/-/qir-0.0.6.tgz#6c4534c6dac00f7690f69cdc41f9b0c67eea8d6a"
-  integrity sha1-bEU0xtrAD3aQ9pzcQfmwxn7qjWo=
-  dependencies:
-    noda "^0.5.0"
 
 qs@6.7.0:
   version "6.7.0"
