@@ -4,8 +4,8 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
-//    "target": "ES2017",
-    //    "allowSyntheticDefaultImports": true,
+    //    "target": "ES2017",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "react"
   },

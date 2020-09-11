@@ -5,32 +5,37 @@ import * as React from "react";
 import TBody from './Body/index'
 import styles from './style.less'
 import Map from './../map/index'
-import Ts from './../tsProject/index'
+import Ts from './../tsProject/';
+import {useState} from "react";
 
-let list: object[] = [{
-    type: 'Header',
-    content: 'xxxx'
-}];
+// let list: object[] = [{
+//     type: 'Header',
+//     content: 'xxxx'
+// }];
 // let Obj: any = {
 //     'header': Header
 // };
 
 
 export function App() {
-    return <div className={styles.app}>
-        <Ts/>
-        {/*12312123*/}
-        {/*9999999999*/}
+    const [count, setCount] = useState(100000);
+
+    const aaaaaa = () => {
+
+        setCount(count + 9999);
+
+        // setTimeout(() => {
+        //     debugger
+        //     console.log(count)
+        // }, 2000)
+        debugger;
+    }
+    return <div className={styles.app} onClick={aaaaaa}>
+        6666**{count}
+        {/*<Ts/>*/}
         {/*<Map/>*/}
-        {/*123211*/}
         {/*<Header/>*/}
         {/*<TBody/>*/}
-        {/*  {
-            list.map((items: any, i: number) => {
-                const Tel = Obj[items.type];
-                return <Header key={i} {...items}/>
-            })
-        }*/}
     </div>
 }
 

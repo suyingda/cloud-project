@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    console.log('start');
+
+    setTimeout(() => {
+        console.log('children2');
+        Promise.resolve().then(() => {
+            console.log('children3');
+        })
+    });
+    const _then = new Promise((resolve) => {
+        console.log('children4')
+        setTimeout(() => {
+            console.log('children5')
+            resolve('children6');
+        })
+    });
+    _then.then((res) => {
+        console.log('children7');
+        setTimeout(() => {
+            console.log(res)
+        })
+    })
+    //    start
+    //    children4
+    //    children2
+    //    children3
+    //    children5
+    //    children7
+    //    children6
+</script>
+<script src="./index.js"></script>
+</body>
+</html>

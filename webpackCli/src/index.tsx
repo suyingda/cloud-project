@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
+import Classify from './tsProject/ECMAScript'
 import {App} from './page/App'
 import HomePage from './tsProject'
 // const url = Deno.args[0];
@@ -9,10 +9,8 @@ import HomePage from './tsProject'
 // const body = new Uint8Array(await res.arrayBuffer());
 // await Deno.stdout.write(body);
 
-
-ReactDOM.render(
-    <>
-        {/*<HomePage/>*/}
+Classify()
+ReactDOM.render(<>
         <App/>
     </>,
     document.getElementById("root")
@@ -20,6 +18,7 @@ ReactDOM.render(
 
 // example. yarn add @types/webpack.env -D
 const Module_ = module as any;
+// const Module_ = module;
 
 if (Module_.hot) {
     Module_.hot.accept()
