@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .divClass {
+            width: 150px;
+            white-space: nowrap; /* 规定文本是否折行 */
+            overflow: hidden; /* 规定超出内容宽度的元素隐藏 */
+            text-overflow: ellipsis;
+            /* 规定超出的内容文本省略号显示，通常跟上面的属性连用，因为没有上面的属性不会触发超出规定的内容 */
+        }
+
+        .displayClass {
+            position: absolute;
+            left: -999999px;
+            top: -999999px;
+        }
+    </style>
+</head>
+<body>
+<div class="divClass">Make all as read Make all as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make al as read Make all as read Make all as read Make all as read</div>
+<script>
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return {
+            width: rect.width
+        }
+    }
+
+    function omitFont() {
+        const getDiv = document.querySelector('div');
+        var outBodyDom = document.createElement('div');
+        outBodyDom.id = 'outBodyDiv';
+        outBodyDom.className = 'divClass displayClass';
+        console.time('slide1:')
+        var createVirtualDom = document.createDocumentFragment();
+        for (var i = 0; i < getDiv.innerHTML.length; i++) {
+            var createVirtualSpan = document.createElement('span');
+            var t = document.createTextNode(getDiv.innerHTML[i]);
+            createVirtualSpan.appendChild(t)
+            createVirtualDom.appendChild(createVirtualSpan)
+        }
+        console.timeEnd('slide1:')
+        outBodyDom.appendChild(createVirtualDom);
+        document.body.appendChild(outBodyDom);
+        let num = 0;
+        const getOutBodyDiv = document.querySelector('#outBodyDiv');
+        // debugger;
+        console.time('slide2:')
+        const getOutBodyDivSpan = getOutBodyDiv.getElementsByTagName('span');
+        const arrayGetSpan = Array.from(getOutBodyDivSpan);
+        for (var i = 0; i < arrayGetSpan.length; i++) {
+            if (!isElementInViewport(arrayGetSpan[i]).width) {
+                num++;
+            }
+        }
+        console.timeEnd('slide2:')
+        console.log(`%c总共隐藏了${num}个字`, "color:green;font-size:40px");
+        console.timeEnd('结束测试：');
+    }
+
+    window.requestIdleCallback(function (eve) {
+        console.time("结束测试：");
+        console.log(eve)
+        omitFont();
+    })
+    // for (var i = 0; i < 10000; i++) {
+    //     console.log(1);
+    // }
+
+</script>
+</body>
+</html>

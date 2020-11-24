@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平移</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'uniform  vec4 u_change;' +
+        'void main(){' +
+        "gl_Position = a_pos+u_change;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor = vec4(1.0,0.0,0.0,1.0);" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+    var dataMultiplePoint = new Float32Array([
+        0.0, 0.0,
+        0.0, 0.5,
+        0.5, -0.5,
+        // -0.5, 0.5,
+        // -0.2, 0.6
+    ]);
+    createBuffer(gl, dataMultiplePoint, "a_pos", program);
+
+    var u_change = gl.getUniformLocation(program, "u_change");
+
+
+    gl.clearColor(u_change, 1.0, 1.0, 1.0, 1.0);  //设置canvas 背景
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    
+    var x = 0.0;
+    var y = 0.0;
+    mouseMove(animation, 0.0, 0.0, 0.1);
+
+    function animation(x, y) {
+        gl.uniform4f(u_change, x, y, 0.0, 1.0);
+        gl.drawArrays(gl.LINE_LOOP, 0, 5);
+    }
+
+    animation(x, y)
+
+</script>
+</body>
+</html>

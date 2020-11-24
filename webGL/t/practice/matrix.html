@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matrix</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'uniform mat4 u_change;' +
+        'void main(){' +
+        "gl_Position = u_change * a_pos;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor = vec4(1.0,0.0,0.0,1.0);" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+
+    var dataMultiplePoint = new Float32Array([
+        0.0, 0.0,
+        0.3, 0.3,
+        0.6, 0.0,
+    ]);
+    createBuffer(gl, dataMultiplePoint, "a_pos", program);
+    // var Tx = 0.0;
+    // var Ty = 0.0;
+    // var Tz = 0.0;
+    //平移矩阵
+    // var matrix = new Float32Array([
+    //     1.0, 0.0, 0.0, 0.0,
+    //     0.0, 1.0, 0.0, 0.0,
+    //     0.0, 0.0, 1.0, 0.0,
+    //     Tx, Ty, Tz, 1.0,
+    // ])
+    // var Tx = 1.0;
+    // var Ty = 1.0;
+    // var Tz = 1.0;
+    // //缩放矩阵
+    // var matrix = new Float32Array([
+    //     Tx, 0.0, 0.0, 0.0,
+    //     0.0, Ty, 0.0, 0.0,
+    //     0.0, 0.0, Tz, 0.0,
+    //     0.0, 0.0, 0.0, 1.0,
+    // ]);
+    var angle = 10;
+    var sinB = Math.sin(Math.PI * angle / 180.0);
+    var cosB = Math.cos(Math.PI * angle / 180.0);
+    //rotate矩阵
+    var matrix = new Float32Array([
+        cosB, sinB, 0.0, 0.0,
+        -sinB, cosB, 0.0, 0.0,
+        0.0, 0.0, 1.0, 0.0,
+        0.0, 0.0, 0.0, 1.0,
+    ]);
+    var u_change = gl.getUniformLocation(program, "u_change");
+    gl.uniformMatrix4fv(u_change, false, matrix);
+
+
+    gl.drawArrays(gl.TRIANGLES, 0, 3)
+</script>
+</body>
+</html>
+

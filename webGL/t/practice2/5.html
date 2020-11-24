@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金字塔-前后relative</title>
+    <script src="./../practice/utils.js"></script>
+    <script src="./cuon-matrix.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'attribute vec4 a_color;' +
+        'varying vec4 v_color;' +
+        'uniform mat4 u_ViewMatrix;' +
+        'uniform mat4 u_ProMatrix;' +
+        'void main(){' +
+        "gl_Position=u_ProMatrix*u_ViewMatrix*a_pos;" +
+        "v_color = a_color;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "precision lowp float;" +
+        "varying vec4 v_color;" +
+        "void main(){" +
+        "gl_FragColor =v_color;" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+    var dataMultiplePoint = new Float32Array([
+        //右边
+        0.75, 1.0, -4.0, 0.4, 1.0, 0.4,//后
+        0.25, -1.0, -4.0, 0.4, 1.0, 0.4,
+        1.25, -1.0, -4.0, 1.0, 0.4, 0.4,
+
+        0.75, 1.0, -2.0, 1.0, 1.0, 0.4,//中
+        0.25, -1.0, -2.0, 1.0, 1.0, 0.4,
+        1.25, -1.0, -2.0, 1.0, 0.4, 0.4,
+
+        0.75, 1.0, 0.0, 0.4, 0.4, 1.0,//前
+        0.25, -1.0, 0.0, 0.4, 0.4, 1.0,
+        1.25, -1.0, 0.0, 1.0, 0.4, 0.4,
+
+
+        //左边
+        -0.75, 1.0, 0.0, 0.4, 0.4, 1.0,
+        -1.25, -1.0, 0.0, 0.4, 0.4, 1.0,
+        -0.25, -1.0, 0.0, 1.0, 0.4, 0.4,
+
+        -0.75, 1.0, -4.0, 0.4, 1.0, 0.4,
+        -1.25, -1.0, -4.0, 0.4, 1.0, 0.4,
+        -0.25, -1.0, -4.0, 1.0, 0.4, 0.4,
+
+        -0.75, 1.0, -2.0, 1.0, 1.0, 0.4,
+        -1.25, -1.0, -2.0, 1.0, 1.0, 0.4,
+        -0.25, -1.0, -2.0, 1.0, 0.4, 0.4,
+
+
+    ]);
+    var FSIZE = dataMultiplePoint.BYTES_PER_ELEMENT;
+
+    var two_buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, two_buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, dataMultiplePoint, gl.STATIC_DRAW);
+    var a_pos = gl.getAttribLocation(program, 'a_pos');
+    var a_color = gl.getAttribLocation(program, 'a_color');
+
+    gl.vertexAttribPointer(a_pos, 3, gl.FLOAT, false, FSIZE * 6, 0);
+    gl.vertexAttribPointer(a_color, 3, gl.FLOAT, false, FSIZE * 6, FSIZE * 3);
+    gl.enableVertexAttribArray(a_pos);
+    gl.enableVertexAttribArray(a_color);
+
+
+    var near = 1.0;
+    var far = 100;
+
+    var u_viewMatrix = gl.getUniformLocation(program, "u_ViewMatrix");
+    var u_proMatrix = gl.getUniformLocation(program, "u_ProMatrix");
+
+    function run() {
+        var proMatrix = new Matrix4();
+        proMatrix.setPerspective(30, 1, near, far);
+        var viewMatrix = new Matrix4();
+        viewMatrix.setLookAt(0, 0, 5, 0, 0, -100, 0, 1.0, 0);
+        gl.uniformMatrix4fv(u_viewMatrix, false, viewMatrix.elements);
+        gl.uniformMatrix4fv(u_proMatrix, false, proMatrix.elements);
+
+        gl.enable(gl.DEPTH_TEST);
+        gl.clear(gl.DEPTH_BUFFER_BIT);
+
+        gl.drawArrays(gl.TRIANGLES, 0, 18);
+    }
+
+
+    run()
+</script>
+</body>
+</html>

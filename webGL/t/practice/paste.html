@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="utils.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'attribute vec2 a_texCoord;' +
+        'varying vec2 v_texCoord;' +
+        'void main(){' +
+        "gl_Position=a_pos;" +
+        "v_texCoord=a_texCoord;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "precision lowp float;" +
+        "uniform sampler2D u_Sampler;" +
+        "uniform sampler2D u_Sampler2;" +
+        "varying vec2 v_texCoord;" +
+        "void main(){" +
+        "vec4 color = texture2D(u_Sampler,v_texCoord);" +
+        "vec4 color2 = texture2D(u_Sampler2,v_texCoord);" +
+        "gl_FragColor=color*color2;" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+    var data = new Float32Array([
+        -0.5, 0.5, 0.0, 1.0,
+        -0.5, -0.5, 0.0, 0.0,
+        0.5, 0.5, 1.0, 1.0,
+        0.5, -0.5, 1.0, 0.0
+    ]);
+    var FSIZE = data.BYTES_PER_ELEMENT;
+
+    var buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+
+    var a_pos = gl.getAttribLocation(program, "a_pos");
+    var a_texCoord = gl.getAttribLocation(program, "a_texCoord");
+
+    gl.vertexAttribPointer(a_pos, 2, gl.FLOAT, false, FSIZE * 4, 0);
+    gl.vertexAttribPointer(a_texCoord, 2, gl.FLOAT, false, FSIZE * 4, FSIZE * 2);
+    gl.enableVertexAttribArray(a_pos);
+    gl.enableVertexAttribArray(a_texCoord);
+
+    init();
+
+    function init() {
+        var texture = gl.createTexture();
+        var texture2 = gl.createTexture();
+
+        var u_Sampler = gl.getUniformLocation(program, "u_Sampler");
+        var u_Sampler2 = gl.getUniformLocation(program, "u_Sampler2");
+
+        var image = new Image();
+        var image2 = new Image();
+
+        image.crossOrigin = "anonymous"
+        image2.crossOrigin = "anonymous"
+        image.onload = function () {
+            loadTexture(gl, texture, u_Sampler, image, 0)
+        }
+        image2.onload = function () {
+            loadTexture(gl, texture2, u_Sampler2, image2, 1)
+        }
+        image.src = "https://images-na.ssl-images-amazon.com/images/I/41Xe%2B6VIgtL.jpg";
+        image2.src = "https://images-na.ssl-images-amazon.com/images/I/41Xe%2B6VIgtL.jpg";
+
+    }
+
+    var g_texUnit = false;
+    var g_texUnit2 = false;
+
+    function loadTexture(gl, texture, u_Sampler, image, texUnit) {
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+        if (texUnit === 0) {
+            gl.activeTexture(gl.TEXTURE0);
+            g_texUnit = true;
+        } else {
+            gl.activeTexture(gl.TEXTURE1);
+            g_texUnit2 = true;
+        }
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, image);
+        gl.uniform1i(u_Sampler, texUnit);
+        if (g_texUnit && g_texUnit2) {
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        }
+    }
+
+
+</script>
+</body>
+</html>

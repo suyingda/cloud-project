@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'uniform mat4 u_translate;' +
+        'uniform mat4 u_rotate;' +
+        'uniform mat4 u_scale;' +
+        'void main(){' +
+        "gl_Position = u_scale*u_rotate*u_translate*a_pos;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor = vec4(1.0,0.0,0.0,1.0);" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+
+    var dataMultiplePoint = new Float32Array([
+        -1.0, 0.0,
+        -0.2, 0.3,
+        -0.6, -0.7
+    ]);
+    createBuffer(gl, dataMultiplePoint, "a_pos", program);
+    var u_translate = gl.getUniformLocation(program, 'u_translate');
+    var u_rotate = gl.getUniformLocation(program, 'u_rotate');
+    var u_scale = gl.getUniformLocation(program, 'u_scale');
+
+    var Tx = 0.0;
+    var Ty = 0.0;
+    var Tz = 0.0;
+    var angle = 0;
+    var a = 1.0;
+    var b = 1.0;
+
+    function animation() {
+        gl.uniformMatrix4fv(u_translate, false, translation(Tx, Ty, 0.0));
+        gl.uniformMatrix4fv(u_rotate, false, rotate(angle));
+        gl.uniformMatrix4fv(u_scale, false, scale(a, b, 1.0));
+
+
+        gl.clearColor(1.0, 0.0, 1.0, 1.0);  //设置canvas 背景
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+        Tx += 0.01;
+        Ty += 0.01;
+        angle += 20;
+        a -= 0.01;
+        b -= 0.01;
+        var run = requestAnimationFrame(animation);
+        if (a < 0) {
+            console.log('i will be come back ');
+            cancelAnimationFrame(run);
+        }
+
+    }
+
+    animation();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    gl = canvas.getContext("webgl");
+
+    var VERTEX_SHADER = "" +
+        "void main(){" +
+        "gl_Position = vec4(0.0,0.0,1.0,1.0);" +
+        "gl_PointSize =10.0;" +
+        "}"
+        + "";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor  =vec4(1.0,0.0,0.0,1.0);" +
+        "}";
+    var vertex = gl.createShader(gl.VERTEX_SHADER);
+    var frag = gl.createShader(gl.FRAGMENT_SHADER);
+    gl.shaderSource(vertex, VERTEX_SHADER);
+    gl.shaderSource(frag, FRAG_SHADER);
+
+    gl.compileShader(vertex);
+    gl.compileShader(frag);
+
+    var program = gl.createProgram();
+    gl.attachShader(program, vertex);
+    gl.attachShader(program, frag);
+
+    gl.linkProgram(program);
+    gl.useProgram(program);
+
+    gl.clearColor(0.0, 1.0, 1.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT); //启用清屏操作
+
+    gl.drawArrays(gl.POINTS, 0, 1);
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zoom</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+<canvas width="800" height="500" id="myCanvas"></canvas>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'uniform  float u_w;' +
+        'void main(){' +
+        "gl_Position.x = a_pos.x;" +
+        "gl_Position.y = a_pos.y;" +
+        "gl_Position.z = a_pos.z;" +
+        "gl_Position.w = u_w;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor = vec4(1.0,0.0,0.0,1.0);" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+    var dataMultiplePoint = new Float32Array([
+        0, 0.0,
+        0.3, 0.3,
+        0.6, 0
+    ]);
+    createBuffer(gl, dataMultiplePoint, "a_pos", program);
+
+    var zoom = 10;
+    var u_w = gl.getUniformLocation(program, "u_w");
+
+
+    function animation() {
+
+        if (zoom < 1.5 && zoom > 0) {
+            zoom -= 0.005;
+        } else if (zoom < 0) {
+            // zoom += 0.005;
+        } else {
+            zoom -= 0.02;
+        }
+
+        gl.uniform1f(u_w, zoom);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        requestAnimationFrame(animation)
+    }
+
+    animation()
+
+</script>
+</body>
+</html>

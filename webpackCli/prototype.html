@@ -9,14 +9,23 @@
 </head>
 <body>
 <script>
-    function A(){}
-    A.prototype = {}
-    var a = new A();
-    A.prototype = {};
-    var b = new A()
+    var arr = [1, 2, 3, 4, 5];
+    // (function(){
+    //     var arr = [1, 2, 3, 4, 5];
+    //     for (var i = 0; i < arr.length; i++) {
+    //         console.log(i, arr[i]);
+    //         if (i > 0) {
+    //             break;
+    //         }
+    //     }
+    // })()
+     arr.forEach((item,i)=>{
+         console.log(i, arr[i]);
+         if (i > 0) {
+             return ;
+         }
+     })
 
-    console.log(a instanceof Object)
-    console.log(b instanceof A)
 </script>
 </body>
 </html>
