@@ -97,3 +97,28 @@ function rotate(angle) {
     ]);
     return matrix;
 }
+
+
+/**
+ *长度转换坐标
+ * */
+function equal(value, reversal) {
+    const subtract = value - 250;
+    if (reversal) {
+        if (value > 0) {
+            return 250 + 250 * value
+        } else if (value === -1) {
+            return 0;
+        } else if (value < 0) {
+            return 250 * Math.abs(value)
+        } else {
+            return 250;
+        }
+    }
+    if (subtract === 0) {
+        return 0.0;
+    } else {
+        return subtract / 250;
+    }
+
+}

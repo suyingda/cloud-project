@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本图行</title>
+    <script src="./../practice/utils.js"></script>
+</head>
+<body>
+<canvas width="500" height="500" id="myCanvas"></canvas>
+
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var gl = myCanvas.getContext('webgl');
+
+    var VERTEX_SHADER = '' +
+        'attribute vec4 a_pos;' +
+        'void main(){' +
+        "gl_Position = a_pos;" +
+        "gl_PointSize = 25.0;" +
+        "}";
+    var FRAG_SHADER = "" +
+        "void main(){" +
+        "gl_FragColor = vec4(0.0,1.0,0.0,1.0);" +
+        "}";
+
+    const program = createShader(gl, VERTEX_SHADER, FRAG_SHADER);
+    var dataMultiplePoint = new Float32Array([
+        -0.5, 0.5,
+        0.5, 0.5,
+        0.5, -0.5,
+        -0.5, -0.5
+    ]);
+    var indexData = new Uint16Array([
+        0, 1, 2,
+        0, 2, 3
+    ]);
+
+    var buffer = gl.createBuffer();
+    //指定绘制所使用的点数据（从该缓存去获取）
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, dataMultiplePoint, gl.STATIC_DRAW);
+    var a_pos = gl.getAttribLocation(program, "a_pos");
+    gl.vertexAttribPointer(a_pos, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(a_pos);
+
+    var indexBuffer = gl.createBuffer();
+    //指定绘制所使用的点数据（从该缓存去获取）
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indexData, gl.STATIC_DRAW);
+    // var a_pos = gl.getAttribLocation(program, "a_pos");
+    // gl.vertexAttribPointer(a_pos, 2, gl.Uint16Array, false, 4, 0);
+    // gl.enableVertexAttribArray(a_pos);
+
+
+    gl.clearColor(1.0, 1.0, 0.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    // gl.drawArrays(gl.LINE_LOOP, 0, 3);
+    gl.drawElements(gl.LINE_LOOP, 6, gl.UNSIGNED_SHORT, 0)
+</script>
+</body>
+</html>

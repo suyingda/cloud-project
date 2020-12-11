@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./../build/three.js"></script>
+</head>
+<body>
+<script>
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(500, 500);
+    document.body.appendChild(renderer.domElement);
+
+    var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
+    camera.position.set(0, 0, 100);
+    camera.up.set(0, 0, 0);
+    camera.lookAt(0, 0, 0);
+
+    var scene = new THREE.Scene();
+
+
+    var geometry = new THREE.PlaneGeometry(100, 25, 1);
+
+    // 初始化一个加载器
+    var loader = new THREE.TextureLoader();
+    var material;
+    // 加载一个资源
+    loader.load(
+        // 资源URL
+        './../../assets/1.png',
+        // onLoad回调
+        function (texture) {
+            // in this example we create the material when the texture is loaded
+            material = new THREE.MeshBasicMaterial({
+                map: texture
+            });
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set(4, 5);
+            var plane = new THREE.Mesh(geometry, material);
+            scene.add(plane);
+            renderer.render(scene, camera);
+        },
+
+        // 目前暂不支持onProgress的回调
+        undefined,
+
+        // onError回调
+        function (err) {
+            console.error('An error happened.');
+        }
+    );
+
+
+</script>
+</body>
+</html>
